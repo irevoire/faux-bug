@@ -43,13 +43,13 @@ impl DerefMut for UpdateFile {
     }
 }
 
-// #[cfg_attr(test, faux::create)]
+#[cfg_attr(test, faux::create)]
 #[derive(Clone, Debug)]
 pub struct UpdateFileStore {
     path: PathBuf,
 }
 
-// #[cfg_attr(test, faux::methods)]
+#[cfg_attr(test, faux::methods)]
 impl UpdateFileStore {
     pub fn new(path: impl AsRef<Path>) -> Result<UpdateFileStore> {
         let path = path.as_ref().join(UPDATE_FILES_PATH);
